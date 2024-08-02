@@ -7,8 +7,7 @@ module.exports = function toReadable (number) {
         case 1: 
             return number ? numbersObject[number] : 'zero'; 
         case 2: 
-            return (number > 20 ? numbersObject[number - number%10] + ' ' + (number%10 === 0 ? '' : numbersObject[number%10]) : 
-            numbersObject[number]).trim();
+            return (number > 20 ? numbersObject[number - number%10] + ' ' + (number%10 === 0 ? '' : numbersObject[number%10]) : numbersObject[number]).trim();
         case 3:
             return (numbersObject[Math.floor(number/100)] + ' ' + numbersObject[100] + ' ' + (number%100 > 20 ? numbersObject[number%100 - number%100%10] + ' ' + (number%100%10 === 0 ? '' : numbersObject[number%100%10]) : (number%100 >= 10 ? numbersObject[number%100] : (number%100 ? numbersObject[number%100%10] : '')))).trim(); 
     }
